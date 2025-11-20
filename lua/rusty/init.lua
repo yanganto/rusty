@@ -92,8 +92,8 @@ function M.apply()
   -- Syntax highlights
   apply_highlight("Type", c.orange, nil)
   apply_highlight("Comment", c.comment, nil, config.italic_comments and { italic = true } or nil)
-  apply_highlight("Todo", c.comment, c.background)
-  apply_highlight("Title", c.comment, nil)
+  apply_highlight("Todo", c.todo, c.background)
+  apply_highlight("Title", c.todo, nil)
   apply_highlight("Identifier", c.purple, nil, nil)
   apply_highlight("Statement", c.purple, nil)
   apply_highlight("Function", c.foreground, nil)
@@ -105,6 +105,12 @@ function M.apply()
   apply_highlight("Structure", c.foreground, nil, nil)
   apply_highlight("Include", c.aqua, nil)
   apply_highlight("Operator", c.foreground, nil)
+
+  -- Rust Syntax highlights
+  apply_highlight("rustType", c.orange, nil)
+  apply_highlight("rustCommentLine", c.comment, nil, config.italic_comments and { italic = true } or nil)
+  apply_highlight("rustCommentBlock", c.comment, nil, config.italic_comments and { italic = true } or nil)
+  apply_highlight("rustCommentLineDoc", c.doc, nil, config.italic_comments and { italic = true } or nil)
 
   -- Vim-specific highlights
   apply_highlight("VimCommand", c.red, nil, nil)
